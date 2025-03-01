@@ -1,0 +1,385 @@
+[gd_scene load_steps=31 format=3 uid="uid://cepi246afixf"]
+
+[ext_resource type="Texture2D" uid="uid://ch78id8rhqwdd" path="res://Assets/2301.w026.n002.3046B.p1.3046.jpg" id="1_2fdap"]
+[ext_resource type="Theme" uid="uid://p28prjlxgoue" path="res://trade_winds.tres" id="1_5joj8"]
+[ext_resource type="FontFile" uid="uid://dhtlfowfkqvoe" path="res://Assets/Fonts/TradeWinds-Regular.ttf" id="1_w36lc"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="2_8tnue"]
+[ext_resource type="Texture2D" uid="uid://6p788nep67q1" path="res://Assets/Icons/Menu/icon-newgame.png" id="3_tp421"]
+[ext_resource type="Texture2D" uid="uid://cjrec5nvsokcl" path="res://Assets/Icons/Menu/icon-save.png" id="4_qcg32"]
+[ext_resource type="Texture2D" uid="uid://b4qecdadsvifx" path="res://Assets/Icons/Menu/icon-load.png" id="5_4fqfn"]
+[ext_resource type="Texture2D" uid="uid://cyertpyebmvbl" path="res://Assets/Icons/Menu/icon-exit.png" id="6_l2v12"]
+[ext_resource type="Script" path="res://Scripts/file.gd" id="7_08tca"]
+[ext_resource type="Texture2D" uid="uid://oamm432tmo3l" path="res://Assets/Icons/Menu/icon-about.png" id="7_mcxcu"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="7_ynbp8"]
+[ext_resource type="Texture2D" uid="uid://dj442ed0j46no" path="res://Assets/Icons/Social Media/Patreon.png" id="8_6yhen"]
+[ext_resource type="Texture2D" uid="uid://den6dbhhq7s8c" path="res://Assets/Icons/Social Media/BlueSky.png" id="8_854il"]
+[ext_resource type="Texture2D" uid="uid://batm266lcm1uc" path="res://Assets/Icons/Social Media/YouTube.png" id="10_67fxd"]
+[ext_resource type="Script" path="res://Scripts/fade.gd" id="10_ucemn"]
+[ext_resource type="Texture2D" uid="uid://dlmu4ffhywfmq" path="res://Assets/Icons/Social Media/Discord.png" id="11_0gdp0"]
+[ext_resource type="Script" path="res://Scripts/help.gd" id="11_7hmc8"]
+[ext_resource type="Texture2D" uid="uid://nrw1bn744qqs" path="res://icon.svg" id="12_ppjk7"]
+[ext_resource type="Script" path="res://Scripts/counter.gd" id="12_rhjxm"]
+[ext_resource type="Texture2D" uid="uid://bijfwyyukafq1" path="res://Assets/Icons/coin.png" id="13_ktgfs"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_tgeu6"]
+device = -1
+command_or_control_autoremap = true
+keycode = 78
+
+[sub_resource type="Shortcut" id="Shortcut_8cb55"]
+events = [SubResource("InputEventKey_tgeu6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_i4oor"]
+device = -1
+command_or_control_autoremap = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_1linl"]
+events = [SubResource("InputEventKey_i4oor")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_sxk8e"]
+device = -1
+command_or_control_autoremap = true
+keycode = 76
+
+[sub_resource type="Shortcut" id="Shortcut_pi6yk"]
+events = [SubResource("InputEventKey_sxk8e")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_bb0bb"]
+device = -1
+command_or_control_autoremap = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_4dxxd"]
+events = [SubResource("InputEventKey_bb0bb")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_7dqw1"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_2k58y"]
+events = [SubResource("InputEventKey_7dqw1")]
+
+[node name="Game" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5joj8")
+script = ExtResource("2_8tnue")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="File" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+unique_name_in_owner = true
+item_count = 4
+item_0/text = "New Game"
+item_0/icon = ExtResource("3_tp421")
+item_1/text = "Save"
+item_1/icon = ExtResource("4_qcg32")
+item_1/id = 1
+item_2/text = "Load"
+item_2/icon = ExtResource("5_4fqfn")
+item_2/id = 2
+item_3/text = "Exit"
+item_3/icon = ExtResource("6_l2v12")
+item_3/id = 3
+script = ExtResource("7_08tca")
+_new_shortcut = SubResource("Shortcut_8cb55")
+_save_shortcut = SubResource("Shortcut_1linl")
+_load_shortcut = SubResource("Shortcut_pi6yk")
+_exit_shortcut = SubResource("Shortcut_4dxxd")
+
+[node name="Settings" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+auto_translate_mode = 1
+hide_on_checkable_item_selection = false
+item_count = 1
+item_0/text = "Mute Volume"
+item_0/checkable = 1
+script = ExtResource("7_ynbp8")
+
+[node name="Difficulty" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings"]
+hide_on_checkable_item_selection = false
+item_count = 3
+item_0/text = "Easy"
+item_0/checkable = 2
+item_0/checked = true
+item_1/text = "Normal"
+item_1/checkable = 2
+item_1/id = 1
+item_2/text = "Hard"
+item_2/checkable = 2
+item_2/id = 2
+
+[node name="Help" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+auto_translate_mode = 1
+size = Vector2i(196, 158)
+item_count = 3
+item_0/text = "About"
+item_0/icon = ExtResource("7_mcxcu")
+item_1/text = "Support"
+item_1/id = 1
+item_1/separator = true
+item_2/text = "Patreon"
+item_2/icon = ExtResource("8_6yhen")
+item_2/id = 2
+script = ExtResource("11_7hmc8")
+
+[node name="Gold" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("12_rhjxm")
+_resource_name = "gold"
+_maximum = 9999999
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Gold"]
+layout_mode = 2
+texture = ExtResource("13_ktgfs")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Gold"]
+layout_mode = 2
+text = "9999999"
+
+[node name="Robots" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("12_rhjxm")
+_resource_name = "robots"
+_maximum = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Robots"]
+layout_mode = 2
+texture = ExtResource("12_ppjk7")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Robots"]
+layout_mode = 2
+text = "9999999"
+
+[node name="About" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -107.5
+offset_right = 201.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="About"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="About/VBoxContainer"]
+layout_mode = 2
+text = "Trade Winds v 0.1
+Developed by Thomas Yanuziello"
+
+[node name="Button" type="Button" parent="About/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[node name="Title Screen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2fdap")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.333
+anchor_right = 0.5
+anchor_bottom = 0.333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.501961)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("1_w36lc")
+theme_override_font_sizes/font_size = 49
+text = "Trade Winds"
+
+[node name="Start" type="Button" parent="Title Screen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.667
+anchor_right = 0.5
+anchor_bottom = 0.667
+grow_horizontal = 2
+grow_vertical = 2
+shortcut = SubResource("Shortcut_2k58y")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Start"
+
+[node name="Socials" type="VBoxContainer" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -166.0
+offset_right = 189.0
+offset_bottom = -7.0
+grow_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="BlueSky" type="LinkButton" parent="Title Screen/Socials"]
+custom_minimum_size = Vector2(213, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+underline = 2
+uri = "https://bsky.app/profile/tyanuziello.bsky.social"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Title Screen/Socials/BlueSky"]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 31.0
+
+[node name="Icon" type="TextureRect" parent="Title Screen/Socials/BlueSky/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_854il")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Handle" type="Label" parent="Title Screen/Socials/BlueSky/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Handle"
+text = "@TYanuziello"
+
+[node name="Patreon" type="LinkButton" parent="Title Screen/Socials"]
+custom_minimum_size = Vector2(209, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+underline = 2
+uri = "https://www.patreon.com/TYanuziello"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Title Screen/Socials/Patreon"]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 31.0
+
+[node name="Icon" type="TextureRect" parent="Title Screen/Socials/Patreon/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_6yhen")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Handle" type="Label" parent="Title Screen/Socials/Patreon/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Handle"
+text = "@TYanuziello"
+
+[node name="YouTube" type="LinkButton" parent="Title Screen/Socials"]
+custom_minimum_size = Vector2(209, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+underline = 2
+uri = "https://www.youtube.com/channel/UCTinZyzzPcP3891tK-JCzGg"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Title Screen/Socials/YouTube"]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 31.0
+
+[node name="Icon" type="TextureRect" parent="Title Screen/Socials/YouTube/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_67fxd")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Handle" type="Label" parent="Title Screen/Socials/YouTube/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Handle"
+text = "@TYanuziello"
+
+[node name="Discord" type="LinkButton" parent="Title Screen/Socials"]
+custom_minimum_size = Vector2(453, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+underline = 2
+uri = "https://discord.gg/9PVsjYdkWj"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Title Screen/Socials/Discord"]
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 31.0
+
+[node name="Icon" type="TextureRect" parent="Title Screen/Socials/Discord/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_0gdp0")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Handle" type="Label" parent="Title Screen/Socials/Discord/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Handle"
+text = "Game Development with Thomas"
+
+[node name="Fade" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("10_ucemn")
+_duration = 2.0
+
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" method="_on_id_pressed"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_file_reset"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/Gold" method="update_counter"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/Robots" method="update_counter"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_id_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_difficulty_id_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Help" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Help" method="_on_id_pressed"]
+[connection signal="pressed" from="About/VBoxContainer/Button" to="About" method="hide"]
+[connection signal="pressed" from="Title Screen/Start" to="." method="_on_start_pressed"]
