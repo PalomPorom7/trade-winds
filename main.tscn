@@ -1,25 +1,31 @@
-[gd_scene load_steps=31 format=3 uid="uid://cepi246afixf"]
+[gd_scene load_steps=37 format=3 uid="uid://cepi246afixf"]
 
 [ext_resource type="Texture2D" uid="uid://ch78id8rhqwdd" path="res://Assets/2301.w026.n002.3046B.p1.3046.jpg" id="1_2fdap"]
 [ext_resource type="Theme" uid="uid://p28prjlxgoue" path="res://trade_winds.tres" id="1_5joj8"]
 [ext_resource type="FontFile" uid="uid://dhtlfowfkqvoe" path="res://Assets/Fonts/TradeWinds-Regular.ttf" id="1_w36lc"]
-[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="2_8tnue"]
+[ext_resource type="Script" path="res://Scripts/Managers/game_manager.gd" id="2_8tnue"]
 [ext_resource type="Texture2D" uid="uid://6p788nep67q1" path="res://Assets/Icons/Menu/icon-newgame.png" id="3_tp421"]
 [ext_resource type="Texture2D" uid="uid://cjrec5nvsokcl" path="res://Assets/Icons/Menu/icon-save.png" id="4_qcg32"]
 [ext_resource type="Texture2D" uid="uid://b4qecdadsvifx" path="res://Assets/Icons/Menu/icon-load.png" id="5_4fqfn"]
 [ext_resource type="Texture2D" uid="uid://cyertpyebmvbl" path="res://Assets/Icons/Menu/icon-exit.png" id="6_l2v12"]
-[ext_resource type="Script" path="res://Scripts/file.gd" id="7_08tca"]
+[ext_resource type="Script" path="res://Scripts/UI/file.gd" id="7_08tca"]
 [ext_resource type="Texture2D" uid="uid://oamm432tmo3l" path="res://Assets/Icons/Menu/icon-about.png" id="7_mcxcu"]
-[ext_resource type="Script" path="res://Scripts/settings.gd" id="7_ynbp8"]
+[ext_resource type="Script" path="res://Scripts/UI/settings.gd" id="7_ynbp8"]
 [ext_resource type="Texture2D" uid="uid://dj442ed0j46no" path="res://Assets/Icons/Social Media/Patreon.png" id="8_6yhen"]
 [ext_resource type="Texture2D" uid="uid://den6dbhhq7s8c" path="res://Assets/Icons/Social Media/BlueSky.png" id="8_854il"]
 [ext_resource type="Texture2D" uid="uid://batm266lcm1uc" path="res://Assets/Icons/Social Media/YouTube.png" id="10_67fxd"]
-[ext_resource type="Script" path="res://Scripts/fade.gd" id="10_ucemn"]
+[ext_resource type="Script" path="res://Scripts/UI/fade.gd" id="10_ucemn"]
 [ext_resource type="Texture2D" uid="uid://dlmu4ffhywfmq" path="res://Assets/Icons/Social Media/Discord.png" id="11_0gdp0"]
-[ext_resource type="Script" path="res://Scripts/help.gd" id="11_7hmc8"]
+[ext_resource type="Script" path="res://Scripts/UI/help.gd" id="11_7hmc8"]
 [ext_resource type="Texture2D" uid="uid://nrw1bn744qqs" path="res://icon.svg" id="12_ppjk7"]
-[ext_resource type="Script" path="res://Scripts/counter.gd" id="12_rhjxm"]
+[ext_resource type="Script" path="res://Scripts/UI/counter.gd" id="12_rhjxm"]
 [ext_resource type="Texture2D" uid="uid://bijfwyyukafq1" path="res://Assets/Icons/coin.png" id="13_ktgfs"]
+[ext_resource type="Script" path="res://Scripts/Managers/ship_manager.gd" id="14_xkk20"]
+[ext_resource type="Script" path="res://Scripts/Resources/Ships/ship.gd" id="15_od1ft"]
+[ext_resource type="Resource" uid="uid://cim5twdg8wu6v" path="res://Scripts/Resources/Ships/cutter.tres" id="16_iyp61"]
+[ext_resource type="Resource" uid="uid://cwh1c2holoyo5" path="res://Scripts/Resources/Ships/ketch.tres" id="17_8po8g"]
+[ext_resource type="Resource" uid="uid://1ffhukqxf6y7" path="res://Scripts/Resources/Ships/schooner.tres" id="18_4kis3"]
+[ext_resource type="Texture2D" uid="uid://p581ovcgh3qo" path="res://Assets/Icons/feather.png" id="20_fns16"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_tgeu6"]
 device = -1
@@ -80,14 +86,14 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Top" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MenuBar" type="MenuBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="MenuBar" type="MenuBar" parent="MarginContainer/VBoxContainer/Top"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="File" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+[node name="File" type="PopupMenu" parent="MarginContainer/VBoxContainer/Top/MenuBar"]
 unique_name_in_owner = true
 item_count = 4
 item_0/text = "New Game"
@@ -107,7 +113,7 @@ _save_shortcut = SubResource("Shortcut_1linl")
 _load_shortcut = SubResource("Shortcut_pi6yk")
 _exit_shortcut = SubResource("Shortcut_4dxxd")
 
-[node name="Settings" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+[node name="Settings" type="PopupMenu" parent="MarginContainer/VBoxContainer/Top/MenuBar"]
 auto_translate_mode = 1
 hide_on_checkable_item_selection = false
 item_count = 1
@@ -115,7 +121,7 @@ item_0/text = "Mute Volume"
 item_0/checkable = 1
 script = ExtResource("7_ynbp8")
 
-[node name="Difficulty" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings"]
+[node name="Difficulty" type="PopupMenu" parent="MarginContainer/VBoxContainer/Top/MenuBar/Settings"]
 hide_on_checkable_item_selection = false
 item_count = 3
 item_0/text = "Easy"
@@ -128,7 +134,7 @@ item_2/text = "Hard"
 item_2/checkable = 2
 item_2/id = 2
 
-[node name="Help" type="PopupMenu" parent="MarginContainer/VBoxContainer/HBoxContainer/MenuBar"]
+[node name="Help" type="PopupMenu" parent="MarginContainer/VBoxContainer/Top/MenuBar"]
 auto_translate_mode = 1
 size = Vector2i(196, 158)
 item_count = 3
@@ -142,35 +148,90 @@ item_2/icon = ExtResource("8_6yhen")
 item_2/id = 2
 script = ExtResource("11_7hmc8")
 
-[node name="Gold" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Gold" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Top"]
 layout_mode = 2
 script = ExtResource("12_rhjxm")
 _resource_name = "gold"
 _maximum = 9999999
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Gold"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Top/Gold"]
 layout_mode = 2
 texture = ExtResource("13_ktgfs")
 expand_mode = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Gold"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Top/Gold"]
 layout_mode = 2
 text = "9999999"
 
-[node name="Robots" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Ship" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("12_rhjxm")
-_resource_name = "robots"
-_maximum = 10
+size_flags_vertical = 3
+script = ExtResource("14_xkk20")
+_ships = Array[ExtResource("15_od1ft")]([ExtResource("16_iyp61"), ExtResource("17_8po8g"), ExtResource("18_4kis3")])
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Robots"]
+[node name="My Ship Info" type="PanelContainer" parent="MarginContainer/VBoxContainer/Ship"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Ship/My Ship Info"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "My Ship"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("12_ppjk7")
-expand_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Robots"]
+[node name="Stats" type="GridContainer" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
 layout_mode = 2
-text = "9999999"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="Name Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Name"
+
+[node name="Name Value" type="LineEdit" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+placeholder_text = "Name your ship"
+max_length = 16
+expand_to_text_length = true
+right_icon = ExtResource("20_fns16")
+select_all_on_focus = true
+caret_blink = true
+
+[node name="Type Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Type"
+
+[node name="Type Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Type of ship goes here"
+
+[node name="Crew Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Crew"
+
+[node name="Crew Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Min - Max Crew"
+
+[node name="Cargo Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "Cargo"
+
+[node name="Cargo Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+layout_mode = 2
+text = "## of tons"
 
 [node name="About" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -374,12 +435,13 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("10_ucemn")
 _duration = 2.0
 
-[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" method="_on_id_pressed"]
-[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_file_reset"]
-[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/Gold" method="update_counter"]
-[connection signal="reset" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/File" to="MarginContainer/VBoxContainer/HBoxContainer/Robots" method="update_counter"]
-[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_id_pressed"]
-[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Settings" method="_on_difficulty_id_pressed"]
-[connection signal="id_pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Help" to="MarginContainer/VBoxContainer/HBoxContainer/MenuBar/Help" method="_on_id_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/MenuBar/File" method="_on_id_pressed"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_file_reset"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/Gold" method="update_counter"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Ship" method="_on_file_reset"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_id_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_difficulty_id_pressed"]
+[connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Help" to="MarginContainer/VBoxContainer/Top/MenuBar/Help" method="_on_id_pressed"]
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats/Name Value" to="MarginContainer/VBoxContainer/Ship" method="_on_name_value_text_submitted"]
 [connection signal="pressed" from="About/VBoxContainer/Button" to="About" method="hide"]
 [connection signal="pressed" from="Title Screen/Start" to="." method="_on_start_pressed"]

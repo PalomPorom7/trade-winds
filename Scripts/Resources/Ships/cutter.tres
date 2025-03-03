@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ship" load_steps=3 format=3 uid="uid://cim5twdg8wu6v"]
+
+[ext_resource type="Texture2D" uid="uid://qsifmqwirgxk" path="res://Assets/Ships/Cutter.png" id="1_t76mm"]
+[ext_resource type="Script" path="res://Scripts/Resources/Ships/ship.gd" id="1_y406y"]
+
+[resource]
+script = ExtResource("1_y406y")
+image = ExtResource("1_t76mm")
+type = "Cutter"
+min_crew = 4
+max_crew = 8
+cargo = 10

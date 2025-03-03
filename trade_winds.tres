@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=33 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
@@ -49,6 +49,46 @@ content_margin_top = 21.0
 content_margin_right = 49.0
 content_margin_bottom = 21.0
 texture = ExtResource("4_qiisw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rmy1"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.0352941, 0.180392, 0.254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.105882, 0.34902, 0.470588, 1)
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 7
+shadow_size = 7
+shadow_offset = Vector2(7, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12t20"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.0352941, 0.180392, 0.254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.027451, 0.14902, 0.211765, 1)
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1uy11"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7k46"]
 content_margin_left = 7.0
@@ -152,6 +192,8 @@ Button/styles/hover = SubResource("StyleBoxTexture_x7wl5")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_6vq36")
 Button/styles/normal = SubResource("StyleBoxTexture_3xrtk")
 Button/styles/pressed = SubResource("StyleBoxTexture_6vq36")
+GridContainer/constants/h_separation = 7
+GridContainer/constants/v_separation = 7
 HBoxContainer/constants/separation = 7
 Handle/base_type = &"Label"
 Handle/font_sizes/font_size = 28
@@ -160,6 +202,21 @@ Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 7
 Label/constants/outline_size = 7
+LineEdit/colors/caret_color = Color(0.95, 0.95, 0.95, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/constants/caret_width = 7
+LineEdit/constants/minimum_character_width = 7
+LineEdit/constants/outline_size = 7
+LineEdit/styles/focus = SubResource("StyleBoxFlat_4rmy1")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_12t20")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_1uy11")
 MarginContainer/constants/margin_bottom = 28
 MarginContainer/constants/margin_left = 28
 MarginContainer/constants/margin_right = 28
