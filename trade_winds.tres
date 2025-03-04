@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=36 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=40 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qfphl856nlw8" path="res://Assets/Styles/Button/normal.png" id="4_qiisw"]
 [ext_resource type="FontFile" uid="uid://ddnty3d1gq0rq" path="res://Assets/Fonts/Roboto-VariableFont_wdth,wght.ttf" id="5_bgw2s"]
 [ext_resource type="Texture2D" uid="uid://mcj7mhd1lvs5" path="res://Assets/Styles/Panel/rope border.png" id="6_5f3cu"]
+[ext_resource type="Texture2D" uid="uid://2ee7ki8thelp" path="res://Assets/Icons/Menu/option-button.png" id="6_bmwqt"]
 [ext_resource type="FontFile" uid="uid://dhtlfowfkqvoe" path="res://Assets/Fonts/TradeWinds-Regular.ttf" id="7_ll3jk"]
 [ext_resource type="Texture2D" uid="uid://btdhnd6yq03xi" path="res://Assets/Icons/Menu/CB-Checked-Enabled.png" id="7_urh1k"]
 [ext_resource type="Texture2D" uid="uid://dc3pwpy41x5sl" path="res://Assets/Icons/Menu/CB-Checked-Disabled.png" id="8_aux7v"]
@@ -114,6 +115,44 @@ content_margin_top = 7.0
 content_margin_right = 7.0
 content_margin_bottom = 7.0
 bg_color = Color(0.027451, 0.14902, 0.211765, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc6bi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8y87j"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.0352941, 0.180392, 0.254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.105882, 0.34902, 0.470588, 1)
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h71q7"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.0352941, 0.180392, 0.254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.027451, 0.14902, 0.211765, 1)
+border_blend = true
 corner_radius_top_left = 7
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
@@ -235,6 +274,31 @@ MenuBar/styles/hover = SubResource("StyleBoxFlat_wc2bc")
 MenuBar/styles/hover_pressed = SubResource("StyleBoxFlat_ecefi")
 MenuBar/styles/normal = SubResource("StyleBoxEmpty_w7k46")
 MenuBar/styles/pressed = SubResource("StyleBoxFlat_ecefi")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+OptionButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+OptionButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/icon_normal_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+OptionButton/constants/align_to_largest_stylebox = 1
+OptionButton/constants/arrow_margin = 7
+OptionButton/constants/h_separation = 7
+OptionButton/constants/modulate_arrow = 1
+OptionButton/constants/outline_size = 7
+OptionButton/icons/arrow = ExtResource("6_bmwqt")
+OptionButton/styles/disabled = SubResource("StyleBoxEmpty_xc6bi")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_8y87j")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_8y87j")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_8y87j")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_h71q7")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_8y87j")
 Panel/styles/panel = SubResource("StyleBoxTexture_x8dsv")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_h5vkf")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0.8)

@@ -12,20 +12,24 @@ func receive(amount : int) -> void:
 	update_counter()
 	_file.data.set(_resource_name, _quantity)
 
+func has_enough(amount : int) -> bool:
+	_quantity = _file.data.get(_resource_name)
+	return _quantity >= amount
+
 func spend(amount : int) -> bool:
 	_quantity = _file.data.get(_resource_name)
 	if _quantity < amount:
 		return false
 	_quantity -= amount
-	update_counter()
 	_file.data.set(_resource_name, _quantity)
+	update_counter()
 	return true
 
 func update_counter() -> void:
 	_label.text = str(_file.data.get(_resource_name))
 
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("ui_up"):
-		#receive(randi_range(1, 100))
-	#if event.is_action_pressed("ui_down"):
-		#print(spend(randi_range(1, 100)))
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_up"):
+		receive(randi_range(1, 100))
+	if event.is_action_pressed("ui_down"):
+		print(spend(randi_range(1, 100)))

@@ -10,3 +10,4 @@ type = "Ketch"
 min_crew = 6
 max_crew = 12
 cargo = 15
+price = 100

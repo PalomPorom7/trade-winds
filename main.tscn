@@ -165,23 +165,29 @@ text = "9999999"
 
 [node name="Ship" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("14_xkk20")
 _ships = Array[ExtResource("15_od1ft")]([ExtResource("16_iyp61"), ExtResource("17_8po8g"), ExtResource("18_4kis3")])
 
-[node name="My Ship Info" type="PanelContainer" parent="MarginContainer/VBoxContainer/Ship"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Ship"]
 layout_mode = 2
+size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Ship/My Ship Info"]
+[node name="My Ship Info" type="PanelContainer" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info"]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "My Ship"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -190,17 +196,17 @@ texture = ExtResource("12_ppjk7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Stats" type="GridContainer" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer"]
+[node name="Stats" type="GridContainer" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="Name Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Name Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Name"
 
-[node name="Name Value" type="LineEdit" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Name Value" type="LineEdit" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 placeholder_text = "Name your ship"
 max_length = 16
@@ -209,29 +215,93 @@ right_icon = ExtResource("20_fns16")
 select_all_on_focus = true
 caret_blink = true
 
-[node name="Type Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Type Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Type"
 
-[node name="Type Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Type Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Type of ship goes here"
 
-[node name="Crew Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Crew Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Crew"
 
-[node name="Crew Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Crew Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Min - Max Crew"
 
-[node name="Cargo Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Cargo Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "Cargo"
 
-[node name="Cargo Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats"]
+[node name="Cargo Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats"]
 layout_mode = 2
 text = "## of tons"
+
+[node name="Ships for Sale" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ships for Sale"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_ppjk7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Stats" type="GridContainer" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="Type Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "Type"
+
+[node name="Type Value" type="OptionButton" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+allow_reselect = true
+
+[node name="Crew Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "Crew"
+
+[node name="Crew Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "Min - Max Crew"
+
+[node name="Cargo Label" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "Cargo"
+
+[node name="Cargo Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "## of tons"
+
+[node name="Cost Label" type="TextureRect" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+texture = ExtResource("13_ktgfs")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Cost Value" type="Label" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats"]
+layout_mode = 2
+text = "99999"
+
+[node name="Buy" type="Button" parent="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Buy"
 
 [node name="About" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -442,6 +512,8 @@ _duration = 2.0
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_id_pressed"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_difficulty_id_pressed"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Help" to="MarginContainer/VBoxContainer/Top/MenuBar/Help" method="_on_id_pressed"]
-[connection signal="text_submitted" from="MarginContainer/VBoxContainer/Ship/My Ship Info/VBoxContainer/Stats/Name Value" to="MarginContainer/VBoxContainer/Ship" method="_on_name_value_text_submitted"]
+[connection signal="text_submitted" from="MarginContainer/VBoxContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats/Name Value" to="MarginContainer/VBoxContainer/Ship" method="_on_name_value_text_submitted"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Stats/Type Value" to="MarginContainer/VBoxContainer/Ship" method="_on_type_value_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Ship/HBoxContainer/Ships for Sale/Buy" to="MarginContainer/VBoxContainer/Ship" method="_on_buy_pressed"]
 [connection signal="pressed" from="About/VBoxContainer/Button" to="About" method="hide"]
 [connection signal="pressed" from="Title Screen/Start" to="." method="_on_start_pressed"]

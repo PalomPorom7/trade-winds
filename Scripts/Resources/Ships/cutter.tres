@@ -10,3 +10,4 @@ type = "Cutter"
 min_crew = 4
 max_crew = 8
 cargo = 10
+price = 10
