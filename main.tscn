@@ -170,7 +170,7 @@ size_flags_vertical = 3
 script = ExtResource("14_xkk20")
 _ships = Array[ExtResource("15_od1ft")]([ExtResource("16_iyp61"), ExtResource("17_8po8g"), ExtResource("18_4kis3")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Ship"]
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer/Ship"]
 layout_mode = 2
 size_flags_vertical = 6
 

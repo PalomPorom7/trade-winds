@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=40 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=41 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
 [ext_resource type="Texture2D" uid="uid://cv04d2xj6sffe" path="res://Assets/Styles/Button/pressed.png" id="3_103yq"]
 [ext_resource type="Texture2D" uid="uid://qfphl856nlw8" path="res://Assets/Styles/Button/normal.png" id="4_qiisw"]
+[ext_resource type="Texture2D" uid="uid://cb8u76s7egc7e" path="res://Assets/Icons/Menu/hsplit-dragger.png" id="5_28y7g"]
 [ext_resource type="FontFile" uid="uid://ddnty3d1gq0rq" path="res://Assets/Fonts/Roboto-VariableFont_wdth,wght.ttf" id="5_bgw2s"]
 [ext_resource type="Texture2D" uid="uid://mcj7mhd1lvs5" path="res://Assets/Styles/Panel/rope border.png" id="6_5f3cu"]
 [ext_resource type="Texture2D" uid="uid://2ee7ki8thelp" path="res://Assets/Icons/Menu/option-button.png" id="6_bmwqt"]
@@ -234,6 +235,10 @@ Button/styles/pressed = SubResource("StyleBoxTexture_6vq36")
 GridContainer/constants/h_separation = 7
 GridContainer/constants/v_separation = 7
 HBoxContainer/constants/separation = 7
+HSplitContainer/constants/autohide = 0
+HSplitContainer/constants/minimum_grab_thickness = 14
+HSplitContainer/constants/separation = 21
+HSplitContainer/icons/grabber = ExtResource("5_28y7g")
 Handle/base_type = &"Label"
 Handle/font_sizes/font_size = 28
 Handle/fonts/font = ExtResource("5_bgw2s")
