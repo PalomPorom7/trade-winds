@@ -9,16 +9,16 @@ var _quantity : int
 func receive(amount : int) -> void:
 	_quantity = _file.data.get(_resource_name)
 	_quantity = min(_quantity + amount, _maximum)
-	update_counter()
 	_file.data.set(_resource_name, _quantity)
+	update_counter()
 
 func spend(amount : int) -> bool:
 	_quantity = _file.data.get(_resource_name)
 	if _quantity < amount:
 		return false
 	_quantity -= amount
-	update_counter()
 	_file.data.set(_resource_name, _quantity)
+	update_counter()
 	return true
 
 func update_counter() -> void:
