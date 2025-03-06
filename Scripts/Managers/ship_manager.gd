@@ -73,6 +73,7 @@ func _on_type_value_item_selected(index: int) -> void:
 		_other_ship_crew_value.text = ""
 		_other_ship_cargo_value.text = ""
 		_other_ship_cost_value.text = ""
+		_buy.disabled = true
 		return
 	_other_ship_image.texture = _ships[index].image
 	_other_ship_crew_value.text = str(_ships[index].min_crew) + " - " + str(_ships[index].max_crew)
