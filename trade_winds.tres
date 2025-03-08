@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=41 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=61 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
@@ -21,6 +21,19 @@
 [ext_resource type="Texture2D" uid="uid://b631ocju0siuy" path="res://Assets/Icons/Menu/submenu.png" id="15_475qx"]
 [ext_resource type="Texture2D" uid="uid://bfk0qohl0qof7" path="res://Assets/Icons/Menu/CB-Unchecked-Disabled.png" id="16_eu7sl"]
 [ext_resource type="Texture2D" uid="uid://pilexsxslawn" path="res://Assets/Styles/Panel/steel plate.png" id="17_pxty4"]
+[ext_resource type="Texture2D" uid="uid://cncyeru1od542" path="res://Assets/Icons/Menu/icon-decrement.png" id="21_65me8"]
+[ext_resource type="Texture2D" uid="uid://bqrkblvs17fpl" path="res://Assets/Icons/Menu/icon-decrement-highlight.png" id="22_w5oog"]
+[ext_resource type="Texture2D" uid="uid://ct3lsq88g3h7g" path="res://Assets/Icons/Menu/bar-white.png" id="23_n1ny2"]
+[ext_resource type="Texture2D" uid="uid://fctgjp685kgx" path="res://Assets/Icons/Menu/icon-increment.png" id="24_6wn2p"]
+[ext_resource type="Texture2D" uid="uid://b6wf2dsx6y378" path="res://Assets/Icons/Menu/icon-increment-highlight.png" id="25_pdy0i"]
+[ext_resource type="Texture2D" uid="uid://cu8sb43amm712" path="res://Assets/Icons/Menu/icon-menu.png" id="26_p0xyq"]
+[ext_resource type="Texture2D" uid="uid://cadewtksgpb0p" path="res://Assets/Icons/Menu/icon-menu-highlight.png" id="27_sdr00"]
+[ext_resource type="Texture2D" uid="uid://ddk37xtx6sqgy" path="res://Assets/Styles/Tabs/tab-selected.png" id="28_b4wmo"]
+[ext_resource type="Texture2D" uid="uid://ceqptekssepqw" path="res://Assets/Styles/Tabs/tab-disabled.png" id="29_0rlny"]
+[ext_resource type="Texture2D" uid="uid://bayqd5qeb7c0m" path="res://Assets/Styles/Tabs/tab-focused.png" id="30_frivp"]
+[ext_resource type="Texture2D" uid="uid://deo5w6eru0l7m" path="res://Assets/Styles/Tabs/tab-hovered.png" id="31_i5ha1"]
+[ext_resource type="Texture2D" uid="uid://dyen2xttc04i4" path="res://Assets/Styles/Tabs/tab-unselected.png" id="32_7uh8a"]
+[ext_resource type="Texture2D" uid="uid://djt7rkgat5ruu" path="res://Assets/Styles/Tabs/tab-shadow.png" id="33_7n0ky"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgpej"]
 content_margin_left = 49.0
@@ -205,6 +218,59 @@ texture_margin_top = 21.0
 texture_margin_right = 21.0
 texture_margin_bottom = 21.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mt21q"]
+texture = ExtResource("28_b4wmo")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddjsj"]
+texture = ExtResource("29_0rlny")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 128, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyymw"]
+texture = ExtResource("30_frivp")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 128, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7g3uh"]
+texture = ExtResource("31_i5ha1")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 128, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxkna"]
+texture = ExtResource("28_b4wmo")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+region_rect = Rect2(0, 0, 128, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw05l"]
+texture = ExtResource("32_7uh8a")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(0, 0, 128, 112)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4odxn"]
+texture = ExtResource("33_7n0ky")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
 [resource]
 default_font = ExtResource("7_ll3jk")
 default_font_size = 21
@@ -336,4 +402,28 @@ PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxLine_eekev")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxLine_eekev")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_2kkbc")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_eekev")
+TabContainer/colors/drop_mark_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+TabContainer/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(0.95, 0.95, 0.95, 1)
+TabContainer/colors/font_unselected_color = Color(0.7, 0.7, 0.7, 1)
+TabContainer/constants/icon_max_width = 32
+TabContainer/constants/icon_separation = 7
+TabContainer/constants/outline_size = 7
+TabContainer/constants/side_margin = 16
+TabContainer/icons/decrement = ExtResource("21_65me8")
+TabContainer/icons/decrement_highlight = ExtResource("22_w5oog")
+TabContainer/icons/drop_mark = ExtResource("23_n1ny2")
+TabContainer/icons/increment = ExtResource("24_6wn2p")
+TabContainer/icons/increment_highlight = ExtResource("25_pdy0i")
+TabContainer/icons/menu = ExtResource("26_p0xyq")
+TabContainer/icons/menu_highlight = ExtResource("27_sdr00")
+TabContainer/styles/panel = SubResource("StyleBoxTexture_mt21q")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxTexture_ddjsj")
+TabContainer/styles/tab_focus = SubResource("StyleBoxTexture_gyymw")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_7g3uh")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_hxkna")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_tw05l")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxTexture_4odxn")
 VBoxContainer/constants/separation = 7

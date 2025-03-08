@@ -11,7 +11,8 @@ const SHIP_NAMES : Array[String] = [
 	"Serendipity",
 	"Relentless"
 ]
-@onready var _gold: HBoxContainer = $"../Top/Gold"
+@export var _icon: Texture2D
+@onready var _gold: HBoxContainer = %Gold
 
 @export var _ships : Array[Ship]
 @onready var _file: PopupMenu = %File
@@ -29,6 +30,7 @@ var _my_ship : int
 @onready var _buy: Button = $"HBoxContainer/Ships for Sale/Buy"
 
 func _ready() -> void:
+	get_parent().set_tab_icon(3, _icon)
 	for ship in _ships:
 		_other_ship_type_value.add_item(ship.type)
 
