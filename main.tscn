@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cepi246afixf"]
+[gd_scene load_steps=40 format=3 uid="uid://cepi246afixf"]
 
 [ext_resource type="Texture2D" uid="uid://ch78id8rhqwdd" path="res://Assets/2301.w026.n002.3046B.p1.3046.jpg" id="1_2fdap"]
 [ext_resource type="Theme" uid="uid://p28prjlxgoue" path="res://trade_winds.tres" id="1_5joj8"]
@@ -20,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://nrw1bn744qqs" path="res://icon.svg" id="12_ppjk7"]
 [ext_resource type="Script" path="res://Scripts/UI/counter.gd" id="12_rhjxm"]
 [ext_resource type="Texture2D" uid="uid://bijfwyyukafq1" path="res://Assets/Icons/coin.png" id="13_ktgfs"]
+[ext_resource type="Script" path="res://Scripts/Managers/crew_manager.gd" id="14_rmu8b"]
 [ext_resource type="Script" path="res://Scripts/Managers/ship_manager.gd" id="14_xkk20"]
 [ext_resource type="Script" path="res://Scripts/Resources/Ships/ship.gd" id="15_od1ft"]
+[ext_resource type="Texture2D" uid="uid://be68m8pu4dimy" path="res://Assets/Icons/crew.png" id="15_rl6rk"]
 [ext_resource type="Resource" uid="uid://cim5twdg8wu6v" path="res://Scripts/Resources/Ships/cutter.tres" id="16_iyp61"]
 [ext_resource type="Texture2D" uid="uid://odwi8h7n7sq6" path="res://Assets/Icons/ship.png" id="16_ovd7l"]
 [ext_resource type="Resource" uid="uid://cwh1c2holoyo5" path="res://Scripts/Resources/Ships/ketch.tres" id="17_8po8g"]
@@ -169,7 +171,7 @@ text = "9999999"
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 3
+current_tab = 2
 drag_to_rearrange_enabled = true
 use_hidden_tabs_for_min_size = true
 
@@ -184,11 +186,68 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="Crew" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
+script = ExtResource("14_rmu8b")
+_icon = ExtResource("15_rl6rk")
 metadata/_tab_index = 2
 
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew"]
+layout_mode = 2
+
+[node name="My Crew" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+column_titles_visible = true
+select_mode = 1
+scroll_horizontal_enabled = false
+
+[node name="Captain" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree"]
+
+[node name="First Mate" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain"]
+
+[node name="Second Mate" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate"]
+
+[node name="Navigator" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Second Mate"]
+
+[node name="Helmsman" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Second Mate"]
+
+[node name="Barrelman" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Second Mate"]
+
+[node name="Topmanx10" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Second Mate"]
+
+[node name="Seamanx15" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Second Mate"]
+
+[node name="Third Mate" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate"]
+
+[node name="Bosun" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Third Mate"]
+
+[node name="Carpenter" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Third Mate"]
+
+[node name="Surgeon" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Third Mate"]
+
+[node name="Gunner" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Third Mate"]
+
+[node name="Fourth Mate" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate"]
+
+[node name="Cook" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Fourth Mate"]
+
+[node name="Butcher" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Fourth Mate"]
+
+[node name="Purser" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain/First Mate/Fourth Mate"]
+
+[node name="Passengerx10" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain"]
+
+[node name="For Hire" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Ship" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -535,10 +594,12 @@ _duration = 2.0
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/MenuBar/File" method="_on_id_pressed"]
 [connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_file_reset"]
 [connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/Top/Gold" method="update_counter"]
+[connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_file_reset"]
 [connection signal="reset" from="MarginContainer/VBoxContainer/Top/MenuBar/File" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_file_reset"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_id_pressed"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_difficulty_id_pressed"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Help" to="MarginContainer/VBoxContainer/Top/MenuBar/Help" method="_on_id_pressed"]
+[connection signal="item_edited" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_tree_item_edited"]
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats/Name Value" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_name_value_text_submitted"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/Ships for Sale/Stats/Type Value" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_type_value_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/Ships for Sale/Buy" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_buy_pressed"]
