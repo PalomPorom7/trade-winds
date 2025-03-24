@@ -189,6 +189,7 @@ metadata/_tab_index = 1
 layout_mode = 2
 script = ExtResource("14_rmu8b")
 _icon = ExtResource("15_rl6rk")
+_edit_icon = ExtResource("20_fns16")
 metadata/_tab_index = 2
 
 [node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew"]

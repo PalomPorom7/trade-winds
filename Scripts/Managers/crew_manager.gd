@@ -1,6 +1,7 @@
 extends MarginContainer
 
 @export var _icon : Texture2D
+@export var _edit_icon : Texture2D
 @onready var _file: PopupMenu = %File
 @onready var _tree: Tree = $"HSplitContainer/My Crew/Tree"
 var _tree_items : Dictionary
@@ -13,6 +14,7 @@ func _ready() -> void:
 	_tree.set_column_expand(2, false)
 	_populate_tree(_tree.get_child(0), null)
 	_tree.get_root().set_editable(1, true)
+	_tree.get_root().set_icon(1, _edit_icon)
 
 func _populate_tree(current : Node, parent_tree_item : TreeItem) -> void:
 	var x : int = current.name.find("x")
@@ -39,10 +41,18 @@ func _add_tree_item(text : String, quantity : int, parent_tree_item : TreeItem) 
 			_tree_items[text] = new_item
 	return new_item
 
-func _populate_crew_member(role : TreeItem, name : String, pay : String) -> void:
-	role.set_text(1, name)
+func _populate_crew_member(role : TreeItem, crew_name : String, pay : String) -> void:
+	role.set_text(1, crew_name)
 	if role != _tree.get_root():
-		role.set_text(2, pay)
+		if pay:
+			role.set_cell_mode(2, TreeItem.CELL_MODE_RANGE)
+			role.set_range_config(2, 1, 9, 1)
+			role.set_range(2, float(pay))
+			role.set_editable(2, true)
+		else:
+			role.set_cell_mode(2, TreeItem.CELL_MODE_STRING)
+			role.set_text(2, pay)
+			role.set_editable(2, false)
 
 func _on_file_reset() -> void:
 	for role in _tree_items:
@@ -63,7 +73,17 @@ func _on_file_reset() -> void:
 				_populate_crew_member(_tree_items[role], "", "")
 
 func _on_tree_item_edited() -> void:
-	if _tree.get_root().get_text(1):
-		_file.data.crew["Captain"]["name"] = _tree.get_root().get_text(1)
+	var edited : TreeItem = _tree.get_edited()
+	if edited == _tree.get_root():
+		if edited.get_text(1):
+			_file.data.crew["Captain"]["name"] = edited.get_text(1)
+		else:
+			edited.set_text(1, _file.data.crew["Captain"]["name"])
 	else:
-		_tree.get_root().set_text(1, _file.data.crew["Captain"]["name"])
+		for role in _tree_items:
+			if _tree_items[role] is Array:
+				for i in _tree_items[role].size():
+					if _tree_items[role][i] == edited:
+						_file.data.crew[role][i]["pay"] = int(edited.get_range(2))
+			elif _tree_items[role] == edited:
+				_file.data.crew[role]["pay"] = int(edited.get_range(2))
