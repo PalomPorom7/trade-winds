@@ -186,6 +186,7 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="Crew" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("14_rmu8b")
 _icon = ExtResource("15_rl6rk")
@@ -243,11 +244,49 @@ scroll_horizontal_enabled = false
 
 [node name="Passengerx10" type="Node" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree/Captain"]
 
+[node name="Fire" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fire"
+
 [node name="For Hire" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="Role" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Role"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/ScrollContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Pay" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/ScrollContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("13_ktgfs")
+expand_mode = 3
+
+[node name="Hire" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Hire"
+
 [node name="Ship" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -601,6 +640,8 @@ _duration = 2.0
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Settings/Difficulty" to="MarginContainer/VBoxContainer/Top/MenuBar/Settings" method="_on_difficulty_id_pressed"]
 [connection signal="id_pressed" from="MarginContainer/VBoxContainer/Top/MenuBar/Help" to="MarginContainer/VBoxContainer/Top/MenuBar/Help" method="_on_id_pressed"]
 [connection signal="item_edited" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_tree_item_edited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Fire" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_fire_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/Hire" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_hire_pressed"]
 [connection signal="text_submitted" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/My Ship Info/VBoxContainer/Stats/Name Value" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_name_value_text_submitted"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/Ships for Sale/Stats/Type Value" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_type_value_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Ship/HBoxContainer/Ships for Sale/Buy" to="MarginContainer/VBoxContainer/TabContainer/Ship" method="_on_buy_pressed"]

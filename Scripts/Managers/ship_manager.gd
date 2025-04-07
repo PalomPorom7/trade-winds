@@ -34,6 +34,9 @@ func _ready() -> void:
 	for ship in _ships:
 		_other_ship_type_value.add_item(ship.type)
 
+func get_crew_limits() -> Array[int]:
+	return [_ships[_file.data.ship].min_crew, _ships[_file.data.ship].max_crew]
+
 func _update_my_ship_info() -> void:
 	_my_ship_image.texture = _ships[_my_ship].image
 	_my_ship_name_value.text = _file.data.ship_name

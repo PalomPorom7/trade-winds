@@ -11,9 +11,9 @@ func _init() -> void:
 	gold = 100
 	crew = {
 		"Captain" : {"name" : "James", "pay" : 0},
-		"Navigator" : {"name" : "Billy", "pay" : 5},
-		"Helmsman" : {"name" : "Joe", "pay" : 3},
-		"Topman" : [{"name" : "Bob", "pay" : 2}, {"name" : "Anne", "pay" : 2}],
-		"Seaman" : [{"name" : "Sue", "pay" : 1}, {"name" : "Josephine", "pay" : 1}]
+		#"Navigator" : {"name" : "Billy", "pay" : 5},
+		#"Helmsman" : {"name" : "Joe", "pay" : 3},
+		"Topman" : [],
+		"Seaman" : []
 	}
 	ship = 0
