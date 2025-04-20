@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcyue1jbxwgc4"
-path="res://.godot/imported/map.png-e9861c550963c27a6cdedf086794947e.ctex"
+uid="uid://bhg25g8y3gv5i"
+path="res://.godot/imported/Checkbutton-On.png-d1c4afb89fd0f05f9835580fc2f176b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/map.png"
-dest_files=["res://.godot/imported/map.png-e9861c550963c27a6cdedf086794947e.ctex"]
+source_file="res://Assets/Icons/Menu/Checkbutton-On.png"
+dest_files=["res://.godot/imported/Checkbutton-On.png-d1c4afb89fd0f05f9835580fc2f176b2.ctex"]
 
 [params]
 

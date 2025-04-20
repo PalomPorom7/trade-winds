@@ -6,3 +6,4 @@ class_name Ship extends Resource
 @export var max_crew : int
 @export var cargo : int
 @export var price : int
+@export var speed : int = 100

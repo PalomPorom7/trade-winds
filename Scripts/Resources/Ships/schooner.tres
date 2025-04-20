@@ -11,3 +11,4 @@ min_crew = 8
 max_crew = 20
 cargo = 20
 price = 1000
+speed = 150

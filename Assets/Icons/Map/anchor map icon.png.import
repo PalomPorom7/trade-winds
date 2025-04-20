@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8psj8jtrk1yp"
-path="res://.godot/imported/market.png-a25342d191dcc7e81675653355e27761.ctex"
+uid="uid://dscm85dmp7wsh"
+path="res://.godot/imported/anchor map icon.png-2d457ae82def82e7869de6be160ea932.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/market.png"
-dest_files=["res://.godot/imported/market.png-a25342d191dcc7e81675653355e27761.ctex"]
+source_file="res://Assets/Icons/Map/anchor map icon.png"
+dest_files=["res://.godot/imported/anchor map icon.png-2d457ae82def82e7869de6be160ea932.ctex"]
 
 [params]
 

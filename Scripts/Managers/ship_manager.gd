@@ -34,6 +34,9 @@ func _ready() -> void:
 	for ship in _ships:
 		_other_ship_type_value.add_item(ship.type)
 
+func get_speed() -> float:
+	return _ships[_file.data.ship].speed
+
 func get_crew_limits() -> Array[int]:
 	return [_ships[_file.data.ship].min_crew, _ships[_file.data.ship].max_crew]
 

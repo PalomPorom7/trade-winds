@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odwi8h7n7sq6"
-path="res://.godot/imported/ship.png-aacff01d3eedf3f7379237adfae7b76c.ctex"
+uid="uid://drtnucyq0gw2q"
+path="res://.godot/imported/Slider-Tick.png-06fd30fd8430916bbf66631c0fb1d9bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icons/ship.png"
-dest_files=["res://.godot/imported/ship.png-aacff01d3eedf3f7379237adfae7b76c.ctex"]
+source_file="res://Assets/Icons/Menu/Slider-Tick.png"
+dest_files=["res://.godot/imported/Slider-Tick.png-06fd30fd8430916bbf66631c0fb1d9bb.ctex"]
 
 [params]
 

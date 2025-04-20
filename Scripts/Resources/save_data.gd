@@ -6,6 +6,7 @@ class_name SaveData extends Resource
 @export var crew : Dictionary
 @export var ship : int
 @export var ship_name : String
+@export var port : int
 
 func _init() -> void:
 	gold = 100
