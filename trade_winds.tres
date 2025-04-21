@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=80 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=85 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
@@ -16,10 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://d2fbcoox6xn0f" path="res://Assets/Icons/Menu/Toggle-Checked-Enabled.png" id="11_3h5kd"]
 [ext_resource type="Texture2D" uid="uid://ddc1dk44k6a5o" path="res://Assets/Icons/Menu/Toggle-Checked-Disabled.png" id="12_miwy0"]
 [ext_resource type="Texture2D" uid="uid://bv1ebs2d35bva" path="res://Assets/Icons/Menu/Toggle-Unchecked-Enabled.png" id="13_asw0f"]
+[ext_resource type="Texture2D" uid="uid://bhg25g8y3gv5i" path="res://Assets/Icons/Menu/Checkbutton-On.png" id="13_cyjdw"]
+[ext_resource type="Texture2D" uid="uid://nj2d22ekbv08" path="res://Assets/Icons/Menu/Checkbutton-On-Disabled.png" id="14_18cif"]
 [ext_resource type="Texture2D" uid="uid://dd8q2tf5sb5wx" path="res://Assets/Icons/Menu/Toggle-Unchecked-Disabled.png" id="14_tovvp"]
 [ext_resource type="Texture2D" uid="uid://b1ji0w71kh4n3" path="res://Assets/Icons/Menu/CB-Unchecked-Enabled.png" id="15_71jii"]
 [ext_resource type="Texture2D" uid="uid://b631ocju0siuy" path="res://Assets/Icons/Menu/submenu.png" id="15_475qx"]
+[ext_resource type="Texture2D" uid="uid://g2xycononq7o" path="res://Assets/Icons/Menu/Checkbutton-Off.png" id="15_763p4"]
 [ext_resource type="Texture2D" uid="uid://bfk0qohl0qof7" path="res://Assets/Icons/Menu/CB-Unchecked-Disabled.png" id="16_eu7sl"]
+[ext_resource type="Texture2D" uid="uid://dbcm3kdcy3nvq" path="res://Assets/Icons/Menu/Checkbutton-Off-Disabled.png" id="16_ypsbh"]
 [ext_resource type="Texture2D" uid="uid://pilexsxslawn" path="res://Assets/Styles/Panel/steel plate.png" id="17_pxty4"]
 [ext_resource type="Texture2D" uid="uid://cncyeru1od542" path="res://Assets/Icons/Menu/icon-decrement.png" id="21_65me8"]
 [ext_resource type="Texture2D" uid="uid://cb2cik8l7e1xn" path="res://Assets/Icons/Map/destination.png" id="21_n5eun"]
@@ -82,6 +86,8 @@ texture = ExtResource("4_qiisw")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x178y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l5gq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw23k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rmy1"]
 content_margin_left = 7.0
@@ -392,6 +398,28 @@ CheckBox/styles/hover = SubResource("StyleBoxEmpty_r0ino")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_nxn78")
 CheckBox/styles/normal = SubResource("StyleBoxEmpty_x178y")
 CheckBox/styles/pressed = SubResource("StyleBoxEmpty_5l5gq")
+CheckButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckButton/constants/align_to_largest_stylebox = 1
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 7
+CheckButton/constants/icon_max_width = 32
+CheckButton/constants/outline_size = 7
+CheckButton/icons/checked = ExtResource("13_cyjdw")
+CheckButton/icons/checked_disabled = ExtResource("14_18cif")
+CheckButton/icons/unchecked = ExtResource("15_763p4")
+CheckButton/icons/unchecked_disabled = ExtResource("16_ypsbh")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_tw23k")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_tw23k")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_tw23k")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_tw23k")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_tw23k")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_tw23k")
 GridContainer/constants/h_separation = 7
 GridContainer/constants/v_separation = 7
 HBoxContainer/constants/separation = 7
