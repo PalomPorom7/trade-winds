@@ -8,6 +8,7 @@ class_name SaveData extends Resource
 @export var ship_name : String
 @export var port : int
 @export var is_anchored : bool = true
+@export var sail : float
 
 func _init() -> void:
 	gold = 100

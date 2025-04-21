@@ -304,12 +304,24 @@ text = "Embark"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 21
 
 [node name="Anchor" type="CheckButton" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 button_pressed = true
 text = "Anchor"
 flat = true
+
+[node name="Sails" type="VSlider" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.5
+tick_count = 3
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sails"
 
 [node name="Market" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -777,6 +789,7 @@ _duration = 2.0
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/Ports/Port-au-Prince" to="MarginContainer/VBoxContainer/TabContainer/Map" method="set_destination" binds= [2]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/Ports/Santo Domingo" to="MarginContainer/VBoxContainer/TabContainer/Map" method="set_destination" binds= [3]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer/Anchor" to="MarginContainer/VBoxContainer/TabContainer/Map" method="_on_anchor_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer/Sails" to="MarginContainer/VBoxContainer/TabContainer/Map" method="_on_sails_value_changed"]
 [connection signal="item_edited" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_tree_item_edited"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Fire" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_fire_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/For Hire/Hire" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_hire_pressed"]

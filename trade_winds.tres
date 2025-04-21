@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=85 format=3 uid="uid://p28prjlxgoue"]
+[gd_resource type="Theme" load_steps=94 format=3 uid="uid://p28prjlxgoue"]
 
 [ext_resource type="Texture2D" uid="uid://bf8mkut6vvp1r" path="res://Assets/Styles/Button/disabled.png" id="1_1gbph"]
 [ext_resource type="Texture2D" uid="uid://gqiia1hopmsq" path="res://Assets/Styles/Button/hover.png" id="2_wnetd"]
@@ -44,6 +44,12 @@
 [ext_resource type="Texture2D" uid="uid://bvx5wgrofee2h" path="res://Assets/Icons/Menu/CB-Partial.png" id="34_u040y"]
 [ext_resource type="Texture2D" uid="uid://bqym11fvwiiop" path="res://Assets/Icons/Menu/CB-Partial-Disabled.png" id="35_ocipv"]
 [ext_resource type="Texture2D" uid="uid://cmc45vnap20ok" path="res://Assets/Icons/Menu/arrows.png" id="36_nmr68"]
+[ext_resource type="Texture2D" uid="uid://cmnpf26o4td8r" path="res://Assets/Icons/Menu/Slider-Grabber.png" id="44_jmbdo"]
+[ext_resource type="Texture2D" uid="uid://cyupi086c85b5" path="res://Assets/Icons/Menu/Slider-Grabber-Disabled.png" id="45_pj3xd"]
+[ext_resource type="Texture2D" uid="uid://cgohn71e60oum" path="res://Assets/Icons/Menu/Slider-Grabber-Selected.png" id="46_bjfwt"]
+[ext_resource type="Texture2D" uid="uid://drtnucyq0gw2q" path="res://Assets/Icons/Menu/Slider-Tick.png" id="47_or7gu"]
+[ext_resource type="Texture2D" uid="uid://bvr36l01kqk8w" path="res://Assets/Styles/Slider/Slider-Fill.png" id="48_x1ji1"]
+[ext_resource type="Texture2D" uid="uid://drat4oksnlstd" path="res://Assets/Styles/Slider/Slider-Fill-Selected.png" id="49_irq25"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgpej"]
 content_margin_left = 49.0
@@ -345,6 +351,21 @@ border_width_left = 3
 border_width_right = 3
 border_color = Color(0.8, 0.8, 0.8, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhrjh"]
+texture = ExtResource("48_x1ji1")
+expand_margin_left = 21.0
+expand_margin_right = 21.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3y4ri"]
+texture = ExtResource("49_irq25")
+expand_margin_left = 21.0
+expand_margin_right = 21.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqgdo"]
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0.501961, 0.25098, 0.12549, 1)
+
 [resource]
 default_font = ExtResource("7_ll3jk")
 default_font_size = 21
@@ -609,3 +630,12 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rll3g")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_cx7dc")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_mo8kk")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_mo8kk")
+VSlider/constants/center_grabber = 1
+VSlider/constants/grabber_offset = 0
+VSlider/icons/grabber = ExtResource("44_jmbdo")
+VSlider/icons/grabber_disabled = ExtResource("45_pj3xd")
+VSlider/icons/grabber_highlight = ExtResource("46_bjfwt")
+VSlider/icons/tick = ExtResource("47_or7gu")
+VSlider/styles/grabber_area = SubResource("StyleBoxTexture_qhrjh")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_3y4ri")
+VSlider/styles/slider = SubResource("StyleBoxFlat_fqgdo")
