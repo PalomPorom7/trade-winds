@@ -112,6 +112,7 @@ const CREW_NAMES : Array[String] = [
 @export var _icon : Texture2D
 @export var _edit_icon : Texture2D
 @onready var _file: PopupMenu = %File
+@onready var _gold: HBoxContainer = %Gold
 @onready var _tree: Tree = $"HSplitContainer/My Crew/Tree"
 @onready var _hire_grid: GridContainer = $"HSplitContainer/For Hire/ScrollContainer/GridContainer"
 @onready var _ship: MarginContainer = %Ship
@@ -132,6 +133,17 @@ func _ready() -> void:
 	_possible_roles.erase("Captain")
 	_possible_roles.erase("Passenger")
 	_populate_hire_grid()
+
+func pay_out() -> void:
+	var total : int = 0
+	for role in _file.data.crew:
+		if _file.data.crew[role] is Array:
+			for person in _file.data.crew[role]:
+				total += person["pay"]
+		else:
+			total += _file.data.crew[role]["pay"]
+	if not _gold.spend(total):
+		print("Game Over!")
 
 func get_crew_count() -> int:
 	var count : int = 0

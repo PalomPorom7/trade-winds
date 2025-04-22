@@ -175,11 +175,12 @@ text = "9999999"
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 drag_to_rearrange_enabled = true
 use_hidden_tabs_for_min_size = true
 
 [node name="Map" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("14_bvy4m")
 _icon = ExtResource("15_h8w54")
@@ -312,6 +313,12 @@ button_pressed = true
 text = "Anchor"
 flat = true
 
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+allow_greater = true
+allow_lesser = true
+
 [node name="Sails" type="VSlider" parent="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 max_value = 1.0
@@ -324,7 +331,6 @@ layout_mode = 2
 text = "Sails"
 
 [node name="Market" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -788,6 +794,7 @@ _duration = 2.0
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/Ports/Kingston" to="MarginContainer/VBoxContainer/TabContainer/Map" method="set_destination" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/Ports/Port-au-Prince" to="MarginContainer/VBoxContainer/TabContainer/Map" method="set_destination" binds= [2]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/Ports/Santo Domingo" to="MarginContainer/VBoxContainer/TabContainer/Map" method="set_destination" binds= [3]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/Map/MarginContainer/Embark" to="MarginContainer/VBoxContainer/TabContainer/Map" method="_on_embark_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer/Anchor" to="MarginContainer/VBoxContainer/TabContainer/Map" method="_on_anchor_toggled"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Map/VBoxContainer/HBoxContainer/Sails" to="MarginContainer/VBoxContainer/TabContainer/Map" method="_on_sails_value_changed"]
 [connection signal="item_edited" from="MarginContainer/VBoxContainer/TabContainer/Crew/HSplitContainer/My Crew/Tree" to="MarginContainer/VBoxContainer/TabContainer/Crew" method="_on_tree_item_edited"]
